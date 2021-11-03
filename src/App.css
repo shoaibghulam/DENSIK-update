@@ -212,16 +212,11 @@ body {
 }
 
 .card-box:hover {
-  background-image: linear-gradient(
-    to right top,
-    #132a3f,
-    #12273b,
-    #112537,
-    #102234,
-    #0f2030
-  );
+  background-color: #0e2a3c;
   background-repeat: no-repeat;
   background-size: 100vw !important;
+  transform: translateY(-15px);
+  transition: all 0.3s ease-in-out;
   color: #fff !important;
 }
 .card-box:hover h1,
@@ -768,13 +763,13 @@ body {
 
 /* Global classes by Abdul Qadir */
 
-.custom-card-box {
+/* .custom-card-box {
   background-color: #0e2a3c;
 }
 .custom-card-box h1,
 .custom-card-box p {
   color: white;
-}
+} */
 
 /* Css for mobile screens */
 @media only screen and (max-width: 600px) {
