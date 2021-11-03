@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import {Navbar,Nav,Container, Row, Col} from 'react-bootstrap';
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi';
+import {AiOutlineMenu} from 'react-icons/ai';
 
 import '../App.css';
 
@@ -14,7 +15,9 @@ const NavegationBar=() =>{
   <Navbar.Brand href="#home">
     <img src="img/logo.png" />
   </Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" >
+    <AiOutlineMenu  className="text-light"/>
+    </Navbar.Toggle>
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="custom-nav">
     

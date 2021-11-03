@@ -40,11 +40,11 @@ const Contact=() =>{
     <div className="container contactus pb-60">
 
         <div className="row">
-            <div className="col-md-6 contact-desc">
+            <div className="col-md-6 contact-desc text-center mx-auto">
             
             <h1>Contact Us</h1>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-10 mx-auto">
                 <div className="contactus-desc">
                     <h1>SUBMIT A REQUEST</h1>
                     <form action="">
@@ -68,7 +68,7 @@ const Contact=() =>{
     </div>
     </section>
     {/* map end */}
-    <footer>
+    <footer className="text-center">
         <div className="container">
             <div className="row">
                 <div className="col-md-6 footer-desc pb-60 mt-50">
