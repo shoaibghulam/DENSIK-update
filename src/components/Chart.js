@@ -17,6 +17,18 @@ const data = {
     },
   ],
 };
+const dataGreen = {
+  labels: ["1", "2", "3", "4", "5", "6"],
+  datasets: [
+    {
+      label: "",
+      data: [5, 12, 20, 2, 7, 12],
+      fill: false,
+      backgroundColor: "rgb(101, 213, 102)",
+      borderColor: "rgba(101, 213, 102, 0.2)",
+    },
+  ],
+};
 
 const chartoptions = {
   scales: {
@@ -30,10 +42,12 @@ const chartoptions = {
 export default function Chart() {
   return (
     <>
-      <section className=" container-fluid pb-60 mt-0 mt-md-5">
+      <section className=" container pb-60 mt-0 mt-md-5">
         <div className="row pb-60 mt-0 mt-md-5">
-          <div className="col-md-12">
-            <h1 className="crypto-char-tab-title">top Most Traded Crypto</h1>
+          <div className="container">
+            <div className="col-md-12">
+              <h1 className="crypto-char-tab-title">top Most Traded Crypto</h1>
+            </div>
           </div>
           {/* row start */}
           <div className="col-md-3 col-sm-10 mx-auto mt-4">
@@ -64,24 +78,7 @@ export default function Chart() {
               <br />
               <h3 className="chart-price">$20.000</h3>
               <div className="mt-3">
-                <Line data={data} options={chartoptions} />
-              </div>
-            </div>
-          </div>
-          {/* row end */}
-          {/* row start */}
-          <div className="col-md-3 col-sm-10 mx-auto mt-4">
-            <div className="chart-box">
-              <div className="chart-icon bitcoin-icon">
-                <BiBitcoin />
-              </div>
-              <span className="chart-title">
-                BTC <FaExchangeAlt className="exchange-icon" /> <span>USA</span>
-              </span>
-              <br />
-              <h3 className="chart-price">$20.000</h3>
-              <div className="mt-3">
-                <Line data={data} options={chartoptions} />
+                <Line data={dataGreen} options={chartoptions} />
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Tab, Tabs } from "react-bootstrap";
+import Switch from "react-switch";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   AiFillPlayCircle,
@@ -38,14 +39,19 @@ const IconOption = (props) => (
 );
 
 const Home = () => {
+  const [buy, setBuy] = useState(true);
   let reactSwipeEl;
+
+  const handleSwitchChange = (checked) => {
+    setBuy(checked);
+  };
 
   return (
     <>
       <div className="container px-4 pb-60">
         <div className="row px-3">
           <div className="col-md-7 mt-0 mb-4 mt-md-5 info-text">
-            <h1>Transform Your Idea Into Reality with Densik</h1>
+            <h1>Buy &amp; Sell Crypto Fast &amp; Easy With MTN Mobile Money</h1>
             <p className="mt-4 d-none d-md-block">
               The entire Densik team knows what's good with Traded and you can
               too with 1 week and a good attitude.
@@ -164,8 +170,26 @@ const Home = () => {
                       </div>
                       <div className="custom-form-group text-center mt-4"></div>
 
-                      <div className="custom-form-group">
-                        <label>Receive (Estimated)</label>
+                      <div className="custom-form-group ">
+                        <div className=" w-100 d-inline-flex align-center my-3 justify-content-between">
+                          <span className="label-custom">
+                            Receive (Estimated){" "}
+                          </span>
+                          <span>
+                            <Switch
+                              className={[
+                                "toggle-switch",
+                                buy ? "bg-green" : "bg-red",
+                              ].join(" ")}
+                              onChange={handleSwitchChange}
+                              checked={buy}
+                              // width={98}
+                              // uncheckedIcon="Sell"
+                              // checkedIcon="Buy"
+                            />
+                          </span>
+                        </div>
+
                         <br />
 
                         <Select
@@ -186,7 +210,15 @@ const Home = () => {
                           1 BUSD = 1.0005 USDC{" "}
                           <ImLoop2 className=" text-light" />{" "}
                         </p>
-                        <button className="btn-block btn-blue">Hello</button>
+                        <button
+                          className={[
+                            "btn-block",
+                            "btn-buy-green",
+                            buy ? "btn-bg-green" : "btn-bg-red",
+                          ].join(" ")}
+                        >
+                          Hello
+                        </button>
                       </div>
                     </form>
                   </div>
@@ -263,10 +295,10 @@ const Home = () => {
           </div>
 
           <div className="row mx-auto mt-50">
-            <div className="col-md-4 blog-thumb">
+            <div className="col-md-6 blog-thumb">
               <img src="img/photo0.png" />
             </div>
-            <div className="col-md-8  blog-desc mb-4 mt-4">
+            <div className="col-md-6  blog-desc mb-4 mt-4">
               <h1>24/7 CUSTOMER SUPPORT</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -281,10 +313,7 @@ const Home = () => {
             </div>
           </div>
           <div className="row mx-auto mt-50">
-            <div className="col-md-4 blog-thumb mt-5">
-              <img src="img/photo1.png" />
-            </div>
-            <div className="col-md-8 blog-desc mb-5 mt-4">
+            <div className="col-md-6 blog-desc mb-5 mt-4">
               <h1>LITTLE TO NO COMMISSION</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -297,13 +326,16 @@ const Home = () => {
                 Buy Crypto
               </a>
             </div>
+            <div className="col-md-6 blog-thumb mt-5">
+              <img src="img/photo1.png" />
+            </div>
           </div>
 
           <div className="row mx-auto mt-100">
-            <div className="col-md-4 blog-thumb">
+            <div className="col-md-6 blog-thumb">
               <img src="img/photo2.png" />
             </div>
-            <div className="col-md-8 blog-desc mb-4 mt-4">
+            <div className="col-md-6 blog-desc mb-4 mt-4">
               <h1>INSTANT CRYPTO EXCHANGE</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -321,17 +353,19 @@ const Home = () => {
       </section>
 
       {/* map start */}
-      <section className="container text-center map-section mt-100 pb-60">
-        <h1>"Trusted All Over West Africa"</h1>
-        <img src="img/mapbase.png" className="map-img" />
-        <h2>We Accept</h2>
-        <div className="  map-sponser text-center">
-          <img src="img/image1.png" />
-          <img src="img/image3.png" />
-          <img src="img/image4.png" />
-          <img src="img/image5.png" />
-          <img src="img/image6.png" />
-        </div>
+      <section className="mx-auto">
+        <section className="container mx-auto text-center map-section mt-100 pb-60">
+          <h1>"Trusted All Over West Africa"</h1>
+          <img src="img/mapbase.png" className="map-img" />
+          <h2>We Accept</h2>
+          <div className="  map-sponser text-center">
+            <img src="img/image1.png" />
+            <img src="img/image3.png" />
+            <img src="img/image4.png" />
+            <img src="img/image5.png" />
+            <img src="img/image6.png" />
+          </div>
+        </section>
       </section>
       <section className="blog">
         <div className="container mt-50">
@@ -535,7 +569,7 @@ const Home = () => {
                               1 BUSD = 1.0005 USDC{" "}
                               <ImLoop2 className=" text-light" />{" "}
                             </p>
-                            <button className="btn-block btn-blue">
+                            <button className="btn-block btn-buy-green">
                               Hello
                             </button>
                           </div>
@@ -561,7 +595,6 @@ const Home = () => {
                 <img src="img/image1.png" />
                 <img src="img/image3.png" />
                 <img src="img/image4.png" />
-
                 <img src="img/image5.png" />
                 <img src="img/image6.png" />
               </div>
